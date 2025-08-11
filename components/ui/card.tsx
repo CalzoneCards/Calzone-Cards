@@ -1,5 +1,19 @@
 import * as React from 'react';
-export function Card({className='', children}:{className?:string, children:React.ReactNode}){ return <div className={`border rounded-2xl bg-white/80 ${className}`}>{children}</div>; }
-export function CardHeader({className='', children}:{className?:string, children:React.ReactNode}){ return <div className={`p-4 ${className}`}>{children}</div>; }
-export function CardContent({className='', children}:{className?:string, children:React.ReactNode}){ return <div className={`p-4 ${className}`}>{children}</div>; }
-export function CardFooter({className='', children}:{className?:string, children:React.ReactNode}){ return <div className={`p-4 ${className}`}>{children}</div>; }
+
+type DivProps = React.HTMLAttributes<HTMLDivElement>;
+
+export function Card({ className = '', ...props }: DivProps) {
+  return <div {...props} className={`border rounded-3xl bg-white/80 ${className}`} />;
+}
+
+export function CardHeader({ className = '', ...props }: DivProps) {
+  return <div {...props} className={`p-4 ${className}`} />;
+}
+
+export function CardContent({ className = '', ...props }: DivProps) {
+  return <div {...props} className={`p-4 ${className}`} />;
+}
+
+export function CardFooter({ className = '', ...props }: DivProps) {
+  return <div {...props} className={`p-4 ${className}`} />;
+}
